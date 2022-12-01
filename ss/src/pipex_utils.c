@@ -6,7 +6,7 @@
 /*   By: ael-bako <ael-bako@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 16:48:02 by mlazzare          #+#    #+#             */
-/*   Updated: 2022/11/30 17:34:39 by ael-bako         ###   ########.fr       */
+/*   Updated: 2022/12/01 11:49:38 by ael-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ static void	parent(int *fd, t_cmd *c, char **envp)
 	close(fd[1]);
 	while (c->path[++i])
 	{
-		printf ("cmd:%s\n", cmd);
 		cmd = ft_join(c->path[i], c->cmd);
 		if (!cmd)
 			return ;
