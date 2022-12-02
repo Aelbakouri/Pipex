@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-bako <ael-bako@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/20 17:40:47 by mlazzare          #+#    #+#             */
-/*   Updated: 2022/12/01 14:01:09 by ael-bako         ###   ########.fr       */
+/*   Created: 2022/12/02 13:09:08 by ael-bako          #+#    #+#             */
+/*   Updated: 2022/12/02 13:09:16 by ael-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "../inc/pipex.h"
 
@@ -72,10 +73,6 @@ static int	get_cmd(char **ep, t_cmd *c, char *cmd)
 	{
 		c->args[i] = ft_substr(tmp[i], 0, ft_strlen(tmp[i]) - 1);
 		if (!c->args[i])
-		{
-			free_arr(c->args);
-			return (free_arr(tmp));
-		}
 	}
 	c->args[i] = 0;
 	free_arr(tmp);

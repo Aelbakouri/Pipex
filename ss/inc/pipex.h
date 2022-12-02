@@ -6,7 +6,7 @@
 /*   By: ael-bako <ael-bako@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 17:34:21 by mlazzare          #+#    #+#             */
-/*   Updated: 2022/12/01 11:47:41 by ael-bako         ###   ########.fr       */
+/*   Updated: 2022/12/02 11:35:57 by ael-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int		check_empty(char *s);
 * STRING UTILS
 */
 
-char	*ft_join(char *dst, const char *src);
 char	**ft_splitpath(char *s, char c);
 size_t	ft_strlen(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
