@@ -6,7 +6,7 @@
 /*   By: ael-bako <ael-bako@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 16:06:02 by ael-bako          #+#    #+#             */
-/*   Updated: 2022/12/02 16:06:05 by ael-bako         ###   ########.fr       */
+/*   Updated: 2022/12/02 16:14:06 by ael-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,3 @@ int	main(int ac, char **ag, char **envp)
 		return (ft_putstr(strerror(errno), 0));
 	return (0);
 }
-
-// /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
