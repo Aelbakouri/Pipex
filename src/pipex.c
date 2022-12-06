@@ -6,7 +6,7 @@
 /*   By: ael-bako <ael-bako@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 16:54:00 by ael-bako          #+#    #+#             */
-/*   Updated: 2022/12/05 09:11:30 by ael-bako         ###   ########.fr       */
+/*   Updated: 2022/12/06 11:40:52 by ael-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int	main(int ac, char **av, char **env)
 		exec(av[3], env);
 	}
 	else
-		write(STDERR, "Invalid number of arguments.\n", 29);
+		exit_w_msg ("Pipex: Invalid number of arguments.\n", 2);
 	return (1);
 }

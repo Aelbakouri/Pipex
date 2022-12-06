@@ -6,11 +6,26 @@
 /*   By: ael-bako <ael-bako@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:56:06 by ael-bako          #+#    #+#             */
-/*   Updated: 2022/12/05 11:25:49 by ael-bako         ###   ########.fr       */
+/*   Updated: 2022/12/06 11:42:57 by ael-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/pipex.h"
+
+int	empty(char *s, int c)
+{
+	int	i;
+
+	i = -1;
+	while (s[++i])
+	{
+		if (s[i] != ' ')
+			return (0);
+	}
+	if (c)
+		exit_w_msg ("Pipex: command not found\n", STDERR);
+	return (1);
+}
 
 int	ft_open(char *filename, int mode)
 {
@@ -26,7 +41,14 @@ int	ft_open(char *filename, int mode)
 		return (open(filename, O_RDONLY));
 	}
 	else if (mode == OUTFILE)
+	{
+		if (empty (filename, 0))
+		{
+			write(STDERR, "Pipex: Empty file\n", 18);
+			return (STDIN);
+		}
 		return (open(filename, O_CREAT | O_RDWR | O_TRUNC, 0644));
+	}
 	else
 		return (open(filename, O_WRONLY | O_CREAT | O_APPEND, 0644));
 }
@@ -62,6 +84,8 @@ void	exec(char *cmd, char **env)
 	char	**args;
 	char	*path;
 
+	if (empty (cmd, 1))
+		exit(1);
 	args = ft_split(cmd, ' ');
 	if (str_ichr(args[0], '/') > -1)
 		path = args[0];
@@ -79,6 +103,8 @@ void	redir(char *cmd, char **env, int fdin)
 	pid_t	pid;
 	int		pipefd[2];
 
+	if (empty (cmd, 1))
+		exit(1);
 	pipe(pipefd);
 	pid = fork();
 	if (pid < 0)

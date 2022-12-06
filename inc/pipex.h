@@ -6,7 +6,7 @@
 /*   By: ael-bako <ael-bako@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 16:54:13 by ael-bako          #+#    #+#             */
-/*   Updated: 2022/12/05 11:22:54 by ael-bako         ###   ########.fr       */
+/*   Updated: 2022/12/06 11:35:13 by ael-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,11 @@ int		print_error(char *message);
 int		ft_open(char *filename, int mode);
 char	*get_path(char *cmd, char **env);
 void	exec(char *cmd, char **env);
+void	here_doc(char *limiter, int ac);
+int		get_next_line(char **line);
 void	redir(char *cmd, char **env, int fdin);
+int		empty(char *s, int c);
+void	exit_w_msg(char *msg, int c);
 
 // STRING UTILS
 char	*join_path(char *path, char *bin);
