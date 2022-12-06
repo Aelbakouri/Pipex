@@ -1,0 +1,6 @@
+exit(127) //If LSF returns 127, it means a command in the job is not found or executable.
+https://www.ibm.com/support/pages/exit-code-127-means-jobs-command-can-not-be-found-or-executed
+
+The pid_t data type is a signed integer type which is capable of representing a process ID.
+ In the GNU library, this is an int . Function: pid_t getpid (void) The getpid function returns
+ the process ID of the current process.
