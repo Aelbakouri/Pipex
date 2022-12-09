@@ -6,7 +6,7 @@
 /*   By: ael-bako <ael-bako@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:56:06 by ael-bako          #+#    #+#             */
-/*   Updated: 2022/12/06 11:42:57 by ael-bako         ###   ########.fr       */
+/*   Updated: 2022/12/08 19:18:04 by ael-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	empty(char *s, int c)
 			return (0);
 	}
 	if (c)
-		exit_w_msg ("Pipex: command not found\n", STDERR);
+		exit_w_msg ("Pipex: command not found\n", 0);
 	return (1);
 }
 
@@ -44,7 +44,7 @@ int	ft_open(char *filename, int mode)
 	{
 		if (empty (filename, 0))
 		{
-			write(STDERR, "Pipex: Empty file\n", 18);
+			write(STDERR, "Pipex: Empty param\n", 19);
 			return (STDIN);
 		}
 		return (open(filename, O_CREAT | O_RDWR | O_TRUNC, 0644));
@@ -105,10 +105,11 @@ void	redir(char *cmd, char **env, int fdin)
 
 	if (empty (cmd, 1))
 		exit(1);
-	pipe(pipefd);
+	if (pipe(pipefd) == -1)
+		exit_w_msg("Pipe", 1);
 	pid = fork();
 	if (pid < 0)
-		return (perror("Fork"));
+		exit_w_msg("Fork", 1);
 	if (pid)
 	{
 		close(pipefd[1]);

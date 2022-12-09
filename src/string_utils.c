@@ -6,7 +6,7 @@
 /*   By: ael-bako <ael-bako@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 16:54:20 by ael-bako          #+#    #+#             */
-/*   Updated: 2022/12/06 11:26:09 by ael-bako         ###   ########.fr       */
+/*   Updated: 2022/12/08 19:23:03 by ael-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	str_ncmp(char *str1, char *str2, int n)
 		str1++;
 		str2++;
 	}
+	if (*str2 == '\0' && (*str1 == '\n' && !*(str2++)))
+		return (0);
 	return (*str2 - *str1);
 }
 
