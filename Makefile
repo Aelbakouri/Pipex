@@ -13,7 +13,7 @@ OBJ = $(SRC:c=o)
 SRCB = ./src/bonus.c ./src/string_utils.c ./src/pipex_utils.c ./src/pipex_utils2.c
 
 OBJB = $(SRCB:c=o)
- 
+
 all: $(NAME)
 
 $(NAME): $(OBJ)

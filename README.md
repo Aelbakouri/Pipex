@@ -267,3 +267,4 @@ Inside the pipe, everything we do will go to one of its ends.
 [3] Handle file rights when `open()`ing them.
 Return error if the file cannot be opened, read or written.
 Check how the shell treats infile and outfile when they do not exist, are not readable, writable etc. (chmod is your best friend).
+ 
